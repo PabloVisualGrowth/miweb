@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -1126,7 +1127,7 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <div class="logo">
-                <div class="logo-icon">BLOG</div>
+                <img src="https://raw.githubusercontent.com/tu-usuario/tu-repositorio/main/logo.jpg" alt="Blog Logo" style="width: 120px; height: 120px; border-radius: 24px; object-fit: cover; filter: drop-shadow(0 0 30px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 60px rgba(0, 122, 255, 0.3)); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='drop-shadow(0 0 40px rgba(0, 122, 255, 0.8)) drop-shadow(0 0 80px rgba(0, 122, 255, 0.5))'" onmouseout="this.style.transform='scale(1)'; this.style.filter='drop-shadow(0 0 30px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 60px rgba(0, 122, 255, 0.3))'">
             </div>
             <button class="menu-btn" onclick="toggleMenu()" aria-label="Menú">
                 ☰
@@ -1565,21 +1566,14 @@
         <div class="about-card slide-in-left" style="background: var(--glass-bg); border-radius: 24px; padding: 64px 48px; border: 1px solid var(--border-subtle); backdrop-filter: blur(20px) saturate(180%); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-subtle);">
             <div style="display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap;">
                 <div style="flex: 0 0 140px; text-align: center;">
-                    <div style="width: 140px; height: 140px; background: linear-gradient(135deg, #2c2c2c 0%, #4a4a4a 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid var(--accent-blue); margin: 0 auto 16px; position: relative; box-shadow: var(--shadow-medium);">
-                        <div style="width: 100px; height: 100px; background: radial-gradient(circle at 30% 30%, #e0e0e0 0%, #a0a0a0 50%, #606060 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #333; font-size: 12px; text-align: center; line-height: 1.2; font-weight: 500;">
-                            Pablo Pérez
-                        </div>
-                    </div>
+                    <img src="https://raw.githubusercontent.com/tu-usuario/tu-repositorio/main/pablo-foto.jpg" alt="Pablo Pérez" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-blue); margin: 0 auto 16px; box-shadow: var(--shadow-medium); display: block;">
                 </div>
                 <div style="flex: 1; min-width: 320px; text-align: center;">
                     <p style="color: var(--text-secondary); line-height: 1.47059; font-size: 17px; margin-bottom: 24px;">
-                        Comparto lo que he aprendido ayudando a empresas a automatizar procesos y escalar operaciones. 
-                        Mi experiencia en Google Cloud me enseñó cómo la tecnología puede transformar negocios, 
-                        pero también me mostró que la clave está en aplicarla de forma práctica y sin complicaciones.
+                        Durante mis años en Google, trabajé directamente con empresas de todos los tamaños implementando soluciones tecnológicas que transformaron sus operaciones. Esta experiencia me enseñó que la tecnología más avanzada es inútil si no se aplica de forma práctica y centrada en resultados.
                     </p>
                     <p style="color: var(--text-secondary); line-height: 1.47059; font-size: 17px; margin-bottom: 32px;">
-                        Cada semana escribo sobre lo que funciona realmente: automatización, IA empresarial, 
-                        optimización de procesos y estrategias de crecimiento basadas en casos reales.
+                        Ahora ayudo a empresas a implementar estas mismas estrategias, siempre con un enfoque directo y sin jerga técnica.
                     </p>
                     <a href="https://visualandgrowth.com" target="_blank" class="btn btn-primary" style="text-decoration: none;">
                         Trabajar Conmigo
@@ -1708,13 +1702,35 @@
             const form = document.querySelector('#newsletterForm');
             if (!form) return;
             
+            const emailInput = form.querySelector('input[name="email"]');
+            const submitBtn = form.querySelector('.newsletter-btn');
+            
+            // Disable button initially
+            submitBtn.disabled = true;
+            submitBtn.style.opacity = '0.5';
+            submitBtn.style.cursor = 'not-allowed';
+            
+            // Enable button when email is valid
+            emailInput.addEventListener('input', function() {
+                const isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.value.trim());
+                
+                if (isValidEmail) {
+                    submitBtn.disabled = false;
+                    submitBtn.style.opacity = '1';
+                    submitBtn.style.cursor = 'pointer';
+                    this.style.borderColor = 'var(--accent-blue)';
+                } else {
+                    submitBtn.disabled = true;
+                    submitBtn.style.opacity = '0.5';
+                    submitBtn.style.cursor = 'not-allowed';
+                    this.style.borderColor = 'var(--border-subtle)';
+                }
+            });
+            
             form.addEventListener('submit', function(e) {
                 e.preventDefault();
                 
-                const emailInput = form.querySelector('input[name="email"]');
-                const submitBtn = form.querySelector('.newsletter-btn');
-                
-                if (!emailInput.value.trim()) {
+                if (!emailInput.value.trim() || submitBtn.disabled) {
                     emailInput.style.borderColor = '#ff3b30';
                     emailInput.style.boxShadow = '0 0 0 3px rgba(255, 59, 48, 0.2)';
                     emailInput.focus();
@@ -1742,8 +1758,8 @@
                         setTimeout(() => {
                             submitBtn.textContent = originalText;
                             submitBtn.style.backgroundColor = '';
-                            submitBtn.style.opacity = '';
-                            submitBtn.disabled = false;
+                            submitBtn.style.opacity = '0.5';
+                            submitBtn.disabled = true;
                         }, 3000);
                     } else {
                         throw new Error('Error al suscribirse');
@@ -1756,8 +1772,8 @@
                     setTimeout(() => {
                         submitBtn.textContent = originalText;
                         submitBtn.style.backgroundColor = '';
-                        submitBtn.style.opacity = '';
-                        submitBtn.disabled = false;
+                        submitBtn.style.opacity = '0.5';
+                        submitBtn.disabled = true;
                     }, 3000);
                 });
             });
