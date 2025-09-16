@@ -1126,7 +1126,7 @@
     <header class="header" id="header">
         <nav class="nav-container">
             <div class="logo">
-                <img src="https://raw.githubusercontent.com/tu-usuario/tu-repositorio/main/logo.jpg" alt="Blog Logo" style="width: 120px; height: 120px; border-radius: 24px; object-fit: cover; filter: drop-shadow(0 0 30px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 60px rgba(0, 122, 255, 0.3)); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='drop-shadow(0 0 40px rgba(0, 122, 255, 0.8)) drop-shadow(0 0 80px rgba(0, 122, 255, 0.5))'" onmouseout="this.style.transform='scale(1)'; this.style.filter='drop-shadow(0 0 30px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 60px rgba(0, 122, 255, 0.3))'">
+                <img src="logo.jpg" alt="Blog Logo" style="width: 120px; height: 120px; border-radius: 24px; object-fit: cover; filter: drop-shadow(0 0 30px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 60px rgba(0, 122, 255, 0.3)); transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);" onmouseover="this.style.transform='scale(1.05)'; this.style.filter='drop-shadow(0 0 40px rgba(0, 122, 255, 0.8)) drop-shadow(0 0 80px rgba(0, 122, 255, 0.5))'" onmouseout="this.style.transform='scale(1)'; this.style.filter='drop-shadow(0 0 30px rgba(0, 122, 255, 0.6)) drop-shadow(0 0 60px rgba(0, 122, 255, 0.3))'">
             </div>
             <button class="menu-btn" onclick="toggleMenu()" aria-label="Menú">
                 ☰
@@ -1565,7 +1565,7 @@
         <div class="about-card slide-in-left" style="background: var(--glass-bg); border-radius: 24px; padding: 64px 48px; border: 1px solid var(--border-subtle); backdrop-filter: blur(20px) saturate(180%); max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-subtle);">
             <div style="display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap;">
                 <div style="flex: 0 0 140px; text-align: center;">
-                    <img src="https://raw.githubusercontent.com/tu-usuario/tu-repositorio/main/pablo-foto.jpg" alt="Pablo Pérez" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-blue); margin: 0 auto 16px; box-shadow: var(--shadow-medium); display: block;">
+                    <img src="pablo-foto.jpg" alt="Pablo Pérez" style="width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 2px solid var(--accent-blue); margin: 0 auto 16px; box-shadow: var(--shadow-medium); display: block;">
                 </div>
                 <div style="flex: 1; min-width: 320px; text-align: center;">
                     <p style="color: var(--text-secondary); line-height: 1.47059; font-size: 17px; margin-bottom: 24px;">
