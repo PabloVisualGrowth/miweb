@@ -53,31 +53,42 @@
             background: var(--bg-white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            position: relative;
         }
 
-        /* Header - Watermark logo style */
+        /* Giant watermark logo background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100vw;
+            height: 100vh;
+            background-image: url('logoo.jpg');
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.03;
+            filter: blur(2px);
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* Header - Empty, no logo */
         .header {
             padding: 40px;
             background: transparent;
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 100;
-            margin-left: 40px;
-            width: fit-content;
         }
 
         .header-container {
-            display: flex;
-            align-items: center;
+            display: none;
         }
 
         .logo {
-            max-width: 400px;
-            width: 100%;
-            height: auto;
-            display: block;
-            opacity: 0.08;
-            filter: blur(1px);
+            display: none;
         }
 
         /* Hero Section */
