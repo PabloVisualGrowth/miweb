@@ -7,9 +7,9 @@
     <meta name="description" content="Infraestructura de comunicación profesional. Conectamos a profesionales con profesionales.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="logoo.jpg">
-    <link rel="shortcut icon" type="image/png" href="logoo.jpg">
-    <link rel="apple-touch-icon" href="logoo.jpg">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="logo.jpg">
+    <link rel="apple-touch-icon" href="logo.jpg">
     
     <!-- Open Graph -->
     <meta property="og:title" content="visualandgrowth.es - Conectamos Profesionales">
@@ -53,6 +53,29 @@
             background: var(--bg-white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            cursor: none;
+        }
+
+        /* Custom cursor */
+        .custom-cursor {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(0, 102, 255, 0.6) 0%, rgba(0, 102, 255, 0.3) 40%, rgba(0, 102, 255, 0) 70%);
+            position: fixed;
+            pointer-events: none;
+            z-index: 10000;
+            transform: translate(-50%, -50%);
+            transition: width 0.2s, height 0.2s;
+        }
+
+        .custom-cursor.hover {
+            width: 60px;
+            height: 60px;
+        }
+
+        a, button, .email-item {
+            cursor: none !important;
         }
 
         /* Header - Floating card style */
@@ -76,7 +99,7 @@
         }
 
         .logo {
-            max-width: 400px;
+            max-width: 280px;
             width: 100%;
             height: auto;
             display: block;
@@ -711,7 +734,7 @@
             }
 
             .logo {
-                max-width: 250px;
+                max-width: 200px;
             }
 
             .hero {
@@ -818,6 +841,9 @@
     </style>
 </head>
 <body>
+    <!-- Custom Cursor -->
+    <div class="custom-cursor" id="customCursor"></div>
+
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -968,6 +994,26 @@
     </div>
 
     <script>
+        // Custom cursor
+        const cursor = document.getElementById('customCursor');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Hover effect on clickable elements
+        const hoverElements = document.querySelectorAll('a, button, .email-item, .service-card');
+        
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('hover');
+            });
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('hover');
+            });
+        });
+
         // Toggle email expansion
         function toggleEmail(element) {
             element.classList.toggle('expanded');
