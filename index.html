@@ -53,44 +53,17 @@
             background: var(--bg-white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            cursor: none;
         }
 
-        /* Custom cursor */
-        .custom-cursor {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(0, 102, 255, 0.6) 0%, rgba(0, 102, 255, 0.3) 40%, rgba(0, 102, 255, 0) 70%);
-            position: fixed;
-            pointer-events: none;
-            z-index: 10000;
-            transform: translate(-50%, -50%);
-            transition: width 0.2s, height 0.2s;
-        }
-
-        .custom-cursor.hover {
-            width: 60px;
-            height: 60px;
-        }
-
-        a, button, .email-item {
-            cursor: none !important;
-        }
-
-        /* Header - Floating card style */
+        /* Header - Watermark logo style */
         .header {
-            padding: 16px 24px;
-            background: var(--bg-white);
+            padding: 40px;
+            background: transparent;
             position: sticky;
-            top: 16px;
+            top: 0;
             z-index: 100;
-            margin: 16px;
             margin-left: 40px;
             width: fit-content;
-            border-radius: 16px;
-            border: 1px solid var(--border-light);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .header-container {
@@ -99,10 +72,12 @@
         }
 
         .logo {
-            max-width: 280px;
+            max-width: 400px;
             width: 100%;
             height: auto;
             display: block;
+            opacity: 0.08;
+            filter: blur(1px);
         }
 
         /* Hero Section */
@@ -555,25 +530,6 @@
             padding: 80px 40px 40px;
             text-align: center;
             border-top: 1px solid var(--border-light);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .footer-watermark {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .watermark-logo {
-            width: 1200px;
-            max-width: 90vw;
-            height: auto;
-            opacity: 0.03;
-            filter: blur(2px);
         }
 
         .footer-logo {
@@ -583,8 +539,6 @@
             opacity: 0.4;
             margin: 0 auto 32px;
             display: block;
-            position: relative;
-            z-index: 1;
         }
 
         .footer-links {
@@ -593,8 +547,6 @@
             gap: 40px;
             flex-wrap: wrap;
             margin-bottom: 40px;
-            position: relative;
-            z-index: 1;
         }
 
         .footer-link {
@@ -614,15 +566,11 @@
             height: 2px;
             background: var(--primary);
             margin: 40px auto;
-            position: relative;
-            z-index: 1;
         }
 
         .footer-copyright {
             color: var(--text-light);
             font-size: 15px;
-            position: relative;
-            z-index: 1;
         }
 
         /* Cookie Banner */
@@ -728,13 +676,12 @@
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 12px 20px;
-                top: 8px;
-                margin: 8px 16px;
+                padding: 24px 20px;
+                margin-left: 16px;
             }
 
             .logo {
-                max-width: 200px;
+                max-width: 280px;
             }
 
             .hero {
@@ -841,9 +788,6 @@
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="customCursor"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="header-container">
@@ -962,9 +906,6 @@
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-watermark">
-            <img src="logoo.jpg" alt="" class="watermark-logo">
-        </div>
         <img src="logoo.jpg" alt="VISUAL&GROWTH" class="footer-logo">
         <nav class="footer-links">
             <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="footer-link">Visual & Growth</a>
@@ -994,26 +935,6 @@
     </div>
 
     <script>
-        // Custom cursor
-        const cursor = document.getElementById('customCursor');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-        });
-
-        // Hover effect on clickable elements
-        const hoverElements = document.querySelectorAll('a, button, .email-item, .service-card');
-        
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('hover');
-            });
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('hover');
-            });
-        });
-
         // Toggle email expansion
         function toggleEmail(element) {
             element.classList.toggle('expanded');
