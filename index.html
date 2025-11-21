@@ -55,32 +55,45 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Header - Centered logo with neon effect, no card */
+        /* Header - Corporate box design */
         .header {
-            padding: 60px 40px 40px;
+            padding: 40px;
             background: transparent;
-            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: relative;
             z-index: 100;
         }
 
         .header-container {
             display: flex;
-            justify-content: center;
             align-items: center;
+            gap: 24px;
+            background: #f5f5f5;
+            padding: 20px 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .mail-icon {
+            width: 28px;
+            height: 28px;
+            flex-shrink: 0;
         }
 
         .logo {
-            max-width: 500px;
+            max-width: 280px;
             width: 100%;
             height: auto;
             display: block;
-            opacity: 0.9;
-            transition: opacity 0.3s ease;
         }
 
-        .logo:hover {
-            opacity: 1;
+        .domain-extension {
+            font-size: 28px;
+            font-weight: 700;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
         }
 
         /* Hero Section */
@@ -765,11 +778,25 @@
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 40px 24px 30px;
+                padding: 30px 20px;
+            }
+
+            .header-container {
+                gap: 16px;
+                padding: 16px 24px;
+            }
+
+            .mail-icon {
+                width: 24px;
+                height: 24px;
             }
 
             .logo {
-                max-width: 350px;
+                max-width: 200px;
+            }
+
+            .domain-extension {
+                font-size: 24px;
             }
 
             .hero {
@@ -879,7 +906,11 @@
     <!-- Header -->
     <header class="header">
         <div class="header-container">
+            <svg class="mail-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
             <img src="logoo.jpg" alt="VISUAL&GROWTH" class="logo">
+            <span class="domain-extension">.es</span>
         </div>
     </header>
 
