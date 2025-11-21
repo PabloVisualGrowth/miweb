@@ -53,42 +53,31 @@
             background: var(--bg-white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            position: relative;
         }
 
-        /* Giant watermark logo background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100vw;
-            height: 100vh;
-            background-image: url('logoo.jpg');
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-            opacity: 0.03;
-            filter: blur(2px);
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        /* Header - Empty, no logo */
+        /* Header - Centered logo with neon effect, no card */
         .header {
-            padding: 40px;
+            padding: 60px 40px 40px;
             background: transparent;
+            text-align: center;
             position: relative;
             z-index: 100;
         }
 
         .header-container {
-            display: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .logo {
-            display: none;
+            max-width: 500px;
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.6)) 
+                    drop-shadow(0 0 15px rgba(0, 102, 255, 0.4))
+                    drop-shadow(0 0 25px rgba(0, 102, 255, 0.2));
         }
 
         /* Hero Section */
@@ -180,6 +169,54 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        /* Window Card - Mac style with dots */
+        .window-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .window-header {
+            padding: 16px 24px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(0, 102, 255, 0.02);
+        }
+
+        .window-dots {
+            display: flex;
+            gap: 8px;
+        }
+
+        .window-dots span {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .window-dots span:nth-child(1) {
+            background: #ff5f57;
+        }
+
+        .window-dots span:nth-child(2) {
+            background: #ffbd2e;
+        }
+
+        .window-dots span:nth-child(3) {
+            background: #28c840;
+        }
+
+        .window-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-dark);
+            flex: 1;
         }
 
         .inbox-header {
@@ -506,12 +543,25 @@
             color: white;
         }
 
-        .cta-section .section-title {
-            color: white;
+        .cta-inbox-container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
-        .cta-section .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
+        .cta-section .window-card {
+            background: var(--bg-white);
+        }
+
+        .cta-content {
+            padding: 48px;
+            text-align: center;
+        }
+
+        .cta-text {
+            font-size: 18px;
+            color: var(--text-medium);
+            line-height: 1.8;
+            margin-bottom: 32px;
         }
 
         .cta-btn {
@@ -541,6 +591,25 @@
             padding: 80px 40px 40px;
             text-align: center;
             border-top: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .watermark-logo {
+            width: 1200px;
+            max-width: 90vw;
+            height: auto;
+            opacity: 0.03;
+            filter: blur(2px);
         }
 
         .footer-logo {
@@ -550,6 +619,8 @@
             opacity: 0.4;
             margin: 0 auto 32px;
             display: block;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-links {
@@ -558,6 +629,8 @@
             gap: 40px;
             flex-wrap: wrap;
             margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-link {
@@ -577,11 +650,15 @@
             height: 2px;
             background: var(--primary);
             margin: 40px auto;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-copyright {
             color: var(--text-light);
             font-size: 15px;
+            position: relative;
+            z-index: 1;
         }
 
         /* Cookie Banner */
@@ -687,12 +764,11 @@
         /* Responsive */
         @media (max-width: 768px) {
             .header {
-                padding: 24px 20px;
-                margin-left: 16px;
+                padding: 40px 24px 30px;
             }
 
             .logo {
-                max-width: 280px;
+                max-width: 350px;
             }
 
             .hero {
@@ -818,10 +894,14 @@
     <section class="section section-alt fade-in">
         <h2 class="section-title">Qué es visualandgrowth.es</h2>
         <div class="email-inbox-container">
-            <div class="inbox-card">
-                <div class="inbox-header">
-                    <div class="inbox-title">Plataforma de Comunicación Profesional</div>
-                    <div class="inbox-count">3 características principales</div>
+            <div class="window-card">
+                <div class="window-header">
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="window-title">Plataforma de Comunicación Profesional</div>
                 </div>
                 <div class="inbox-list">
                     <div class="email-item unread" onclick="toggleEmail(this)">
@@ -902,21 +982,37 @@
 
     <!-- CTA Section -->
     <section class="section cta-section fade-in">
-        <h2 class="section-title">Operado por Visual & Growth</h2>
-        <p class="section-subtitle">
-            visualandgrowth.es forma parte del ecosistema de Visual & Growth, 
-            consultora especializada en soluciones empresariales para compañías B2B.
-        </p>
-        <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-btn">
-            Visitar Visual & Growth
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-        </a>
+        <div class="cta-inbox-container">
+            <div class="window-card">
+                <div class="window-header">
+                    <div class="window-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <div class="window-title">Operado por Visual & Growth</div>
+                </div>
+                <div class="cta-content">
+                    <p class="cta-text">
+                        visualandgrowth.es forma parte del ecosistema de Visual & Growth, 
+                        consultora especializada en soluciones empresariales para compañías B2B.
+                    </p>
+                    <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-btn">
+                        Visitar Visual & Growth
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
+        <div class="footer-watermark">
+            <img src="logoo.jpg" alt="" class="watermark-logo">
+        </div>
         <img src="logoo.jpg" alt="VISUAL&GROWTH" class="footer-logo">
         <nav class="footer-links">
             <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="footer-link">Visual & Growth</a>
