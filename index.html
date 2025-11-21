@@ -578,6 +578,54 @@
             margin-right: auto;
         }
 
+        .cta-logo-link {
+            display: inline-block;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-logo-link:hover {
+            transform: scale(1.05);
+        }
+
+        .cta-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            border: 4px solid var(--primary);
+            box-shadow: 0 0 0 4px rgba(0, 102, 255, 0.2),
+                        0 0 30px rgba(0, 102, 255, 0.4);
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .cta-logo:hover {
+            box-shadow: 0 0 0 6px rgba(0, 102, 255, 0.3),
+                        0 0 40px rgba(0, 102, 255, 0.6);
+        }
+
+        .cta-logo-link {
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        .cta-logo-link:hover {
+            transform: translateY(-4px);
+        }
+
+        .cta-logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .cta-logo-link:hover .cta-logo {
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+        }
+
         .cta-btn {
             display: inline-flex;
             align-items: center;
@@ -1019,11 +1067,8 @@
             visualandgrowth.es forma parte del ecosistema de Visual & Growth, 
             consultora especializada en soluciones empresariales para compañías B2B.
         </p>
-        <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-btn">
-             →
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
+        <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-logo-link">
+            <img src="logo.jpg" alt="Visual & Growth" class="cta-logo">
         </a>
     </section>
 
