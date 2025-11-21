@@ -75,9 +75,12 @@
             width: 100%;
             height: auto;
             display: block;
-            filter: drop-shadow(0 0 8px rgba(0, 102, 255, 0.6)) 
-                    drop-shadow(0 0 15px rgba(0, 102, 255, 0.4))
-                    drop-shadow(0 0 25px rgba(0, 102, 255, 0.2));
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover {
+            opacity: 1;
         }
 
         /* Hero Section */
@@ -541,27 +544,25 @@
             text-align: center;
             background: var(--text-dark);
             color: white;
+            padding: 120px 40px;
         }
 
-        .cta-inbox-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .cta-section .window-card {
-            background: var(--bg-white);
-        }
-
-        .cta-content {
-            padding: 48px;
-            text-align: center;
+        .cta-title {
+            font-size: clamp(40px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 32px;
+            color: white;
+            letter-spacing: -0.02em;
         }
 
         .cta-text {
-            font-size: 18px;
-            color: var(--text-medium);
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.8;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .cta-btn {
@@ -982,30 +983,17 @@
 
     <!-- CTA Section -->
     <section class="section cta-section fade-in">
-        <div class="cta-inbox-container">
-            <div class="window-card">
-                <div class="window-header">
-                    <div class="window-dots">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <div class="window-title">Operado por Visual & Growth</div>
-                </div>
-                <div class="cta-content">
-                    <p class="cta-text">
-                        visualandgrowth.es forma parte del ecosistema de Visual & Growth, 
-                        consultora especializada en soluciones empresariales para compañías B2B.
-                    </p>
-                    <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-btn">
-                        Visitar Visual & Growth
-                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <h2 class="cta-title">Operado por Visual & Growth</h2>
+        <p class="cta-text">
+            visualandgrowth.es forma parte del ecosistema de Visual & Growth, 
+            consultora especializada en soluciones empresariales para compañías B2B.
+        </p>
+        <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-btn">
+            Visitar Visual & Growth
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
     </section>
 
     <!-- Footer -->
