@@ -7,14 +7,14 @@
     <meta name="description" content="Infraestructura de comunicación profesional. Conectamos a profesionales con profesionales.">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/jpeg" href="logo.jpg">
-    <link rel="shortcut icon" type="image/jpeg" href="logo.jpg">
-    <link rel="apple-touch-icon" href="logo.jpg">
+    <link rel="icon" type="image/png" href="vg_es.png">
+    <link rel="shortcut icon" type="image/png" href="vg_es.png">
+    <link rel="apple-touch-icon" href="vg_es.png">
     
     <!-- Open Graph -->
     <meta property="og:title" content="visualandgrowth.es - Conectamos Profesionales">
     <meta property="og:description" content="Infraestructura de comunicación profesional operada por Visual & Growth">
-    <meta property="og:image" content="https://visualandgrowth.es/logo.jpg">
+    <meta property="og:image" content="https://visualandgrowth.es/vg_es.png">
     <meta property="og:url" content="https://visualandgrowth.es">
     <meta property="og:type" content="website">
     
@@ -22,12 +22,12 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="visualandgrowth.es - Conectamos Profesionales">
     <meta name="twitter:description" content="Infraestructura de comunicación profesional operada por Visual & Growth">
-    <meta name="twitter:image" content="https://visualandgrowth.es/logo.jpg">
+    <meta name="twitter:image" content="https://visualandgrowth.es/vg_es.png">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
     <style>
         * {
@@ -39,504 +39,650 @@
         :root {
             --primary: #0066ff;
             --primary-dark: #0052cc;
-            --primary-light: #3385ff;
-            --secondary: #6366f1;
-            --accent: #10b981;
-            --dark: #0a0a0a;
-            --dark-card: #111111;
-            --dark-elevated: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --text-tertiary: #666666;
-            --border: rgba(255, 255, 255, 0.08);
-            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-            --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.3);
-            --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 40px rgba(0, 102, 255, 0.3);
+            --text-dark: #1a1a1a;
+            --text-medium: #4a4a4a;
+            --text-light: #6b6b6b;
+            --bg-white: #ffffff;
+            --bg-light: #f8f9fb;
+            --border-light: #e5e7eb;
         }
 
         body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            color: var(--text-primary);
-            background: var(--dark);
+            color: var(--text-dark);
+            background: var(--bg-white);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
         }
 
-        /* Animated Background - Replicando visualandgrowth.com */
-        .bg-gradient {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: 
-                radial-gradient(ellipse at 15% 25%, rgba(99, 102, 241, 0.25) 0%, transparent 40%),
-                radial-gradient(ellipse at 85% 15%, rgba(16, 185, 129, 0.2) 0%, transparent 45%),
-                radial-gradient(ellipse at 50% 70%, rgba(147, 51, 234, 0.22) 0%, transparent 50%),
-                radial-gradient(ellipse at 30% 80%, rgba(59, 130, 246, 0.18) 0%, transparent 40%),
-                radial-gradient(ellipse at 75% 85%, rgba(168, 85, 247, 0.2) 0%, transparent 45%),
-                #0a0a0a;
-            animation: gradientShift 25s ease infinite;
-        }
-
-        .bg-gradient::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-            opacity: 0.5;
-            mix-blend-mode: soft-light;
-            background-size: 200px 200px;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { 
-                filter: hue-rotate(0deg) brightness(1);
-            }
-            33% { 
-                filter: hue-rotate(10deg) brightness(1.05);
-            }
-            66% { 
-                filter: hue-rotate(-10deg) brightness(0.95);
-            }
-        }
-
-        /* Header */
+        /* Header - Floating card style */
         .header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: transparent;
-            backdrop-filter: none;
-            border-bottom: none;
-            z-index: 1000;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .header.scrolled {
-            background: transparent;
-            box-shadow: none;
+            padding: 16px 24px;
+            background: var(--bg-white);
+            position: sticky;
+            top: 16px;
+            z-index: 100;
+            margin: 16px;
+            margin-left: 40px;
+            width: fit-content;
+            border-radius: 16px;
+            border: 1px solid var(--border-light);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .header-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 30px 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .logo-wrapper {
             display: flex;
             align-items: center;
-            justify-content: center;
         }
 
-        .logo-img {
-            width: 200px;
-            height: 200px;
-            border-radius: 0;
-            object-fit: cover;
-            filter: none;
-            box-shadow: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Hero Section */
         .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 180px 40px 100px;
-            background: transparent;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .hero-content {
-            max-width: 900px;
             text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero-label {
-            display: inline-block;
-            padding: 8px 20px;
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid rgba(0, 102, 255, 0.2);
-            border-radius: 24px;
-            color: var(--primary-light);
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            margin-bottom: 32px;
+            padding: 120px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .hero h1 {
             font-size: clamp(48px, 7vw, 72px);
             font-weight: 800;
             line-height: 1.1;
-            margin-bottom: 24px;
-            background: linear-gradient(135deg, #ffffff 0%, #a0a0a0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            margin-bottom: 32px;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 .highlight {
+            color: var(--primary);
         }
 
         .hero-subtitle {
-            font-size: clamp(18px, 3vw, 24px);
-            color: var(--text-secondary);
+            font-size: clamp(20px, 3vw, 24px);
+            color: var(--text-medium);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
             font-weight: 400;
-            margin-bottom: 48px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .hero-cta {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            padding: 14px 32px;
-            background: var(--primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 600;
-            box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            cursor: pointer;
-            border: none;
-        }
-
-        .hero-cta:hover {
-            background: var(--primary-dark);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.4);
         }
 
         /* Section Base */
         .section {
-            padding: 120px 40px;
+            padding: 100px 40px;
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
 
-        .section-header {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 80px;
-        }
-
-        .section-label {
-            display: inline-block;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            padding: 6px 16px;
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid rgba(0, 102, 255, 0.2);
-            border-radius: 20px;
-            color: var(--primary-light);
-            margin-bottom: 16px;
+        .section-alt {
+            background: var(--bg-light);
         }
 
         .section-title {
-            font-size: clamp(32px, 5vw, 48px);
+            font-size: clamp(36px, 5vw, 48px);
             font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 20px;
-            color: var(--text-primary);
+            margin-bottom: 24px;
+            text-align: center;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
         }
 
-        .section-description {
-            font-size: 18px;
-            color: var(--text-secondary);
+        .section-subtitle {
+            font-size: 20px;
+            color: var(--text-medium);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 80px;
             line-height: 1.7;
         }
 
-        /* About Section */
-        .about-section {
-            background: transparent;
+        /* About Card */
+        .about-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 64px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
-        .about-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .about-card p {
+            font-size: 20px;
+            color: var(--text-medium);
+            line-height: 1.8;
             text-align: center;
         }
 
-        .about-text {
-            font-size: 19px;
+        /* Email Inbox Interface */
+        .email-inbox-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .inbox-card {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .inbox-header {
+            padding: 24px 32px;
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--bg-light);
+        }
+
+        .inbox-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .inbox-count {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .inbox-list {
+            padding: 8px;
+        }
+
+        .email-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 24px;
+            border-radius: 10px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .email-item:hover {
+            background: var(--bg-light);
+        }
+
+        .email-item.unread .email-subject {
+            font-weight: 700;
+        }
+
+        .unread-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            flex-shrink: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .email-item.expanded .unread-dot {
+            opacity: 0;
+        }
+
+        .email-item.expanded.unread {
+            /* Remove unread styling when expanded */
+        }
+
+        .email-item.expanded .email-subject {
+            font-weight: 600;
+        }
+
+        .email-icon {
+            font-size: 32px;
+            flex-shrink: 0;
+        }
+
+        .email-content {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .email-subject {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 4px;
+        }
+
+        .email-preview {
+            font-size: 15px;
             color: var(--text-medium);
-            line-height: 1.8;
-            margin-bottom: 24px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .email-body {
+            font-size: 15px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-top: 12px;
+            padding-top: 12px;
+            border-top: 1px solid var(--border-light);
+            display: none;
+        }
+
+        .email-item.expanded .email-body {
+            display: block;
+        }
+
+        .email-item.expanded .email-preview {
+            white-space: normal;
+        }
+
+        .email-item.expanded .email-expand {
+            transform: rotate(180deg);
+        }
+
+        .email-expand {
+            font-size: 12px;
+            color: var(--text-light);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 8px;
+        }
+
+        .email-badge {
+            padding: 6px 14px;
+            background: var(--bg-light);
+            color: var(--text-medium);
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .email-badge.new {
+            background: #dbeafe;
+            color: var(--primary);
         }
 
         /* Services Grid */
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
             margin-top: 60px;
         }
 
         .service-card {
-            background: var(--dark-card);
-            border-radius: 20px;
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
             padding: 48px 36px;
             text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid var(--border);
+            transition: all 0.3s ease;
         }
 
         .service-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-glow);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 102, 255, 0.08);
             border-color: var(--primary);
         }
 
         .service-icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 24px;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            box-shadow: var(--shadow-md);
+            font-size: 48px;
+            display: block;
+            margin-bottom: 24px;
         }
 
-        .service-title {
-            font-size: 22px;
-            font-weight: 600;
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 700;
             margin-bottom: 16px;
-            color: var(--text-primary);
+            color: var(--text-dark);
         }
 
-        .service-description {
-            font-size: 16px;
-            color: var(--text-secondary);
+        .service-card p {
+            font-size: 17px;
+            color: var(--text-medium);
             line-height: 1.7;
         }
 
-        /* Company Section */
-        .company-section {
-            background: var(--dark-elevated);
-            color: var(--text-primary);
-        }
-
-        .company-content {
+        /* New: single service card centered */
+        .services-single {
             max-width: 800px;
-            margin: 0 auto;
+            margin: 60px auto 0;
+        }
+
+        /* New: 2-column layout for services */
+        .services-grid-2col {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
+            margin-top: 60px;
+        }
+
+        .service-card-large {
+            background: var(--bg-white);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 48px;
+            transition: all 0.3s ease;
+        }
+
+        .service-card-large:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 102, 255, 0.08);
+            border-color: var(--primary);
+        }
+
+        .service-card-large h3 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-dark);
+        }
+
+        .service-card-large > p {
+            font-size: 17px;
+            color: var(--text-medium);
+            line-height: 1.7;
+            margin-bottom: 32px;
+        }
+
+        .service-visual {
+            background: var(--bg-light);
+            border-radius: 12px;
+            padding: 24px;
+        }
+
+        /* Connection items styling */
+        .connection-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px;
+            background: var(--bg-white);
+            border-radius: 8px;
+            margin-bottom: 12px;
+        }
+
+        .connection-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .connection-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        .connection-dot.green {
+            background: #10b981;
+        }
+
+        .connection-dot.blue {
+            background: var(--primary);
+        }
+
+        .connection-dot.orange {
+            background: #f59e0b;
+        }
+
+        .connection-name {
+            flex: 1;
+            font-size: 16px;
+            color: var(--text-dark);
+            font-weight: 500;
+        }
+
+        .connection-score {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .connection-score.green {
+            color: #10b981;
+        }
+
+        .connection-score.blue {
+            color: var(--primary);
+        }
+
+        .connection-score.orange {
+            color: #f59e0b;
+        }
+
+        /* Stats grid styling */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .stat-item {
+            background: var(--bg-white);
+            padding: 24px;
+            border-radius: 8px;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--text-medium);
+            margin-bottom: 8px;
+        }
+
+        .stat-change {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .stat-change.positive {
+            color: #10b981;
+        }
+
+        /* CTA Section */
+        .cta-section {
             text-align: center;
+            background: var(--text-dark);
+            color: white;
         }
 
-        .company-section .section-label {
-            color: var(--primary-light);
-            background: rgba(0, 102, 255, 0.1);
-            border: 1px solid rgba(0, 102, 255, 0.2);
+        .cta-section .section-title {
+            color: white;
         }
 
-        .company-section .section-title {
-            color: var(--text-primary);
+        .cta-section .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
         }
 
-        .company-section .section-description {
-            color: var(--text-secondary);
-            margin-bottom: 40px;
-        }
-
-        .company-cta {
+        .cta-btn {
             display: inline-flex;
             align-items: center;
             gap: 12px;
-            padding: 14px 32px;
+            padding: 18px 42px;
             background: var(--primary);
             color: white;
             text-decoration: none;
             border-radius: 12px;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 600;
-            box-shadow: 0 4px 16px rgba(0, 102, 255, 0.3);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
+            margin-top: 16px;
         }
 
-        .company-cta:hover {
+        .cta-btn:hover {
             background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.4);
+            box-shadow: 0 8px 24px rgba(0, 102, 255, 0.3);
         }
 
         /* Footer */
         .footer {
-            background: transparent;
-            border-top: none;
-            padding: 60px 40px 40px;
+            background: var(--bg-light);
+            padding: 80px 40px 40px;
             text-align: center;
+            border-top: 1px solid var(--border-light);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .footer-watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .watermark-logo {
+            width: 1200px;
+            max-width: 90vw;
+            height: auto;
+            opacity: 0.03;
+            filter: blur(2px);
+        }
+
+        .footer-logo {
+            max-width: 300px;
+            width: 100%;
+            height: auto;
+            opacity: 0.4;
+            margin: 0 auto 32px;
+            display: block;
             position: relative;
             z-index: 1;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 32px;
-        }
-
-        .footer-logo {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            object-fit: cover;
-            opacity: 0.8;
-        }
-
         .footer-links {
             display: flex;
-            gap: 32px;
-            flex-wrap: wrap;
             justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
         }
 
         .footer-link {
             color: var(--text-medium);
             text-decoration: none;
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 500;
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .footer-link:hover {
-            color: #667eea;
+            color: var(--primary);
         }
 
         .footer-divider {
-            width: 100%;
-            max-width: 600px;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+            width: 80px;
+            height: 2px;
+            background: var(--primary);
+            margin: 40px auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .footer-bottom {
-            text-align: center;
+        .footer-copyright {
             color: var(--text-light);
-            font-size: 14px;
+            font-size: 15px;
+            position: relative;
+            z-index: 1;
         }
 
-        .footer-bottom p {
-            margin-bottom: 8px;
-        }
-
-        /* Cookie/Legal Banner */
-        .legal-banner {
+        /* Cookie Banner */
+        .cookie-banner {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
-            background: rgba(10, 10, 10, 0.98);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid var(--border);
-            padding: 24px;
+            background: white;
+            border-top: 1px solid var(--border-light);
+            padding: 28px;
             z-index: 9999;
-            box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
             transform: translateY(100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: transform 0.4s ease;
         }
 
-        .legal-banner.show {
+        .cookie-banner.show {
             transform: translateY(0);
         }
 
-        .legal-banner-content {
+        .cookie-content {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 32px;
+            gap: 40px;
             flex-wrap: wrap;
         }
 
-        .legal-banner-text {
+        .cookie-text {
             flex: 1;
-            min-width: 280px;
+            min-width: 300px;
         }
 
-        .legal-banner-text h3 {
-            color: var(--text-primary);
+        .cookie-text h3 {
+            color: var(--text-dark);
             font-size: 18px;
             font-weight: 600;
             margin-bottom: 8px;
         }
 
-        .legal-banner-text p {
-            color: var(--text-secondary);
+        .cookie-text p {
+            color: var(--text-medium);
             font-size: 15px;
             line-height: 1.6;
         }
 
-        .legal-banner-buttons {
+        .cookie-buttons {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             flex-wrap: wrap;
         }
 
-        .legal-btn {
-            padding: 10px 24px;
-            border-radius: 8px;
-            font-size: 14px;
+        .cookie-btn {
+            padding: 12px 28px;
+            border-radius: 10px;
+            font-size: 15px;
             font-weight: 500;
             cursor: pointer;
             transition: all 0.2s;
-            border: none;
-            white-space: nowrap;
             font-family: inherit;
+            border: none;
         }
 
-        .legal-btn-accept {
-            background: var(--primary);
+        .cookie-btn-accept {
+            background: var(--text-dark);
             color: white;
         }
 
-        .legal-btn-accept:hover {
-            background: var(--primary-dark);
+        .cookie-btn-accept:hover {
+            background: #000;
         }
 
-        .legal-btn-decline {
+        .cookie-btn-decline {
             background: transparent;
-            color: var(--text-secondary);
-            border: 1px solid var(--border);
+            color: var(--text-medium);
+            border: 1px solid var(--border-light);
         }
 
-        .legal-btn-decline:hover {
-            background: rgba(255, 255, 255, 0.05);
+        .cookie-btn-decline:hover {
+            background: var(--bg-light);
         }
 
         /* Animations */
@@ -552,341 +698,302 @@
         }
 
         .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .legal-banner {
-                padding: 20px 16px;
+            .header {
+                padding: 12px 20px;
+                top: 8px;
+                margin: 8px 16px;
             }
 
-            .legal-banner-content {
-                gap: 24px;
-            }
-
-            .legal-banner-text h3 {
-                font-size: 17px;
-            }
-
-            .legal-banner-text p {
-                font-size: 14px;
-            }
-
-            .legal-btn {
-                padding: 10px 24px;
-                font-size: 14px;
-            }
-
-            .header-container {
-                padding: 16px 24px;
-            }
-
-            .logo-img {
-                width: 150px;
-                height: 150px;
+            .logo {
+                max-width: 250px;
             }
 
             .hero {
-                padding: 140px 24px 80px;
-                min-height: auto;
-            }
-
-            .hero-label {
-                font-size: 11px;
-                padding: 6px 16px;
-                margin-bottom: 24px;
-            }
-
-            .hero h1 {
-                font-size: 40px;
-                margin-bottom: 20px;
-            }
-
-            .hero-subtitle {
-                font-size: 18px;
-                margin-bottom: 36px;
-            }
-
-            .hero-cta {
-                padding: 16px 32px;
-                font-size: 16px;
+                padding: 80px 24px;
             }
 
             .section {
                 padding: 80px 24px;
             }
 
-            .section-header {
-                margin-bottom: 60px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .section-description {
-                font-size: 17px;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 32px;
-                margin-top: 40px;
-            }
-
-            .service-card {
+            .about-card {
                 padding: 40px 28px;
             }
 
-            .about-text {
-                font-size: 17px;
+            .about-card p {
+                font-size: 18px;
+            }
+
+            .inbox-header {
+                padding: 20px 24px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .email-item {
+                padding: 16px 20px;
+                gap: 16px;
+            }
+
+            .email-icon {
+                font-size: 28px;
+            }
+
+            .email-subject {
+                font-size: 16px;
+            }
+
+            .email-preview {
+                font-size: 14px;
+            }
+
+            .services-grid,
+            .services-grid-2col {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .service-card-large {
+                padding: 36px 28px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
             }
 
             .footer {
-                padding: 48px 24px 32px;
+                padding: 60px 24px 40px;
+            }
+
+            .footer-logo {
+                max-width: 250px;
             }
 
             .footer-links {
                 flex-direction: column;
                 gap: 20px;
-                text-align: center;
+            }
+
+            .cookie-content {
+                flex-direction: column;
+            }
+
+            .cookie-buttons {
+                width: 100%;
+            }
+
+            .cookie-btn {
+                flex: 1;
             }
         }
 
         @media (max-width: 480px) {
-            .logo-img {
-                width: 130px;
-                height: 130px;
+            .logo {
+                max-width: 250px;
             }
 
             .hero h1 {
-                font-size: 36px;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
+                font-size: 40px;
             }
 
             .section-title {
-                font-size: 28px;
+                font-size: 32px;
+            }
+
+            .about-card {
+                padding: 32px 24px;
             }
 
             .service-card {
-                padding: 36px 24px;
-            }
-
-            .service-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 32px;
+                padding: 40px 28px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Animated Background -->
-    <div class="bg-gradient"></div>
-
     <!-- Header -->
     <header class="header">
         <div class="header-container">
-            <div class="logo-wrapper">
-                <img src="logo.jpg" alt="Visual&Growth Logo" class="logo-img">
-            </div>
+            <img src="vg_es.png" alt="VISUAL&GROWTH" class="logo">
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content fade-in">
-            <span class="hero-label">visualandgrowth.es</span>
-            <h1>Conectamos a Profesionales con Profesionales</h1>
-            <p class="hero-subtitle">
-                Infraestructura de comunicación profesional gestionada por Visual & Growth
-            </p>
-            <a href="#about" class="hero-cta">
-                Conocer más
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </div>
+    <section class="hero fade-in">
+        <h1>Conectamos a <span class="highlight">profesionales</span> con <span class="highlight">profesionales</span></h1>
+        <p class="hero-subtitle">
+            Infraestructura de comunicación profesional gestionada por Visual & Growth
+        </p>
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section about-section">
-        <div class="section-header fade-in">
-            <span class="section-label">Qué es visualandgrowth.es</span>
-            <h2 class="section-title">Comunicación Profesional Simplificada</h2>
-        </div>
-        <div class="about-content fade-in">
-            <p class="about-text">
-                visualandgrowth.es es una plataforma diseñada para facilitar conexiones profesionales de alto valor. Operamos como infraestructura de comunicación, permitiendo que profesionales y empresas se conecten de manera eficiente, segura y directa.
-            </p>
-            <p class="about-text">
-                Nuestra plataforma elimina las barreras tradicionales de networking empresarial, proporcionando un canal optimizado para establecer relaciones profesionales significativas.
-            </p>
+    <section class="section section-alt fade-in">
+        <h2 class="section-title">Qué es visualandgrowth.es</h2>
+        <div class="email-inbox-container">
+            <div class="inbox-card">
+                <div class="inbox-header">
+                    <div class="inbox-title">Plataforma de Comunicación Profesional</div>
+                    <div class="inbox-count">3 características principales</div>
+                </div>
+                <div class="inbox-list">
+                    <div class="email-item unread" onclick="toggleEmail(this)">
+                        <div class="unread-dot"></div>
+                        <div class="email-icon">📧</div>
+                        <div class="email-content">
+                            <div class="email-subject">Conexiones Directas</div>
+                            <div class="email-preview">Facilitamos contacto directo entre profesionales cualificados sin intermediarios</div>
+                            <div class="email-body">
+                                visualandgrowth.es conecta directamente a profesionales cualificados, eliminando intermediarios innecesarios. 
+                                Nuestro sistema permite establecer contacto de manera eficiente, garantizando que cada conexión sea relevante 
+                                y de alto valor profesional.
+                            </div>
+                        </div>
+                        <div class="email-badge new">Activo</div>
+                        <div class="email-expand">▼</div>
+                    </div>
+                    <div class="email-item unread" onclick="toggleEmail(this)">
+                        <div class="unread-dot"></div>
+                        <div class="email-icon">🔒</div>
+                        <div class="email-content">
+                            <div class="email-subject">Comunicación Segura</div>
+                            <div class="email-preview">Canal optimizado para establecer relaciones profesionales significativas</div>
+                            <div class="email-body">
+                                Operamos un canal seguro y optimizado para establecer relaciones profesionales significativas. 
+                                La privacidad y confidencialidad de todas las comunicaciones están garantizadas mediante 
+                                protocolos de seguridad de nivel empresarial.
+                            </div>
+                        </div>
+                        <div class="email-badge">Verificado</div>
+                        <div class="email-expand">▼</div>
+                    </div>
+                    <div class="email-item unread" onclick="toggleEmail(this)">
+                        <div class="unread-dot"></div>
+                        <div class="email-icon">⚡</div>
+                        <div class="email-content">
+                            <div class="email-subject">Infraestructura Eficiente</div>
+                            <div class="email-preview">Operamos como infraestructura de comunicación entre empresas y profesionales</div>
+                            <div class="email-body">
+                                Nuestra infraestructura está diseñada para maximizar la eficiencia en cada punto de contacto. 
+                                Disponible 24/7, proporcionamos un servicio continuo que permite a profesionales y empresas 
+                                conectar sin limitaciones de horario.
+                            </div>
+                        </div>
+                        <div class="email-badge">24/7</div>
+                        <div class="email-expand">▼</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="section">
-        <div class="section-header fade-in">
-            <span class="section-label">Servicios</span>
-            <h2 class="section-title">Cómo Te Ayudamos</h2>
-            <p class="section-description">
-                Tres pilares fundamentales para tu comunicación profesional
-            </p>
-        </div>
-        <div class="services-grid">
-            <div class="service-card fade-in">
-                <div class="service-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
+    <section class="section fade-in">
+        <h2 class="section-title">Cómo Funciona</h2>
+        <p class="section-subtitle">Infraestructura diseñada para comunicación profesional eficiente</p>
+        <div class="services-single">
+            <div class="service-card-large">
+                <h3>Conexiones de Alto Valor</h3>
+                <p>Facilitamos el contacto directo entre profesionales cualificados, optimizando cada interacción para garantizar comunicaciones efectivas.</p>
+                <div class="service-visual">
+                    <div class="connection-item">
+                        <div class="connection-dot green"></div>
+                        <div class="connection-name">Profesional verificado</div>
+                    </div>
+                    <div class="connection-item">
+                        <div class="connection-dot blue"></div>
+                        <div class="connection-name">Perfil cualificado</div>
+                    </div>
+                    <div class="connection-item">
+                        <div class="connection-dot orange"></div>
+                        <div class="connection-name">Conexión activa</div>
+                    </div>
                 </div>
-                <h3 class="service-title">Conexión Directa</h3>
-                <p class="service-description">
-                    Facilitamos el contacto directo entre profesionales cualificados, sin intermediarios innecesarios ni procesos complejos.
-                </p>
-            </div>
-
-            <div class="service-card fade-in" style="animation-delay: 0.1s;">
-                <div class="service-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect x="3" y="3" width="7" height="7" rx="1" stroke="white" stroke-width="2"/>
-                        <rect x="14" y="3" width="7" height="7" rx="1" stroke="white" stroke-width="2"/>
-                        <rect x="14" y="14" width="7" height="7" rx="1" stroke="white" stroke-width="2"/>
-                        <rect x="3" y="14" width="7" height="7" rx="1" stroke="white" stroke-width="2"/>
-                    </svg>
-                </div>
-                <h3 class="service-title">Infraestructura Confiable</h3>
-                <p class="service-description">
-                    Plataforma robusta y segura que garantiza comunicaciones profesionales fluidas y protegidas.
-                </p>
-            </div>
-
-            <div class="service-card fade-in" style="animation-delay: 0.2s;">
-                <div class="service-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
-                        <path d="M12 6v6l4 2" stroke="white" stroke-width="2" stroke-linecap="round"/>
-                    </svg>
-                </div>
-                <h3 class="service-title">Eficiencia Máxima</h3>
-                <p class="service-description">
-                    Optimizamos cada punto de contacto para que puedas centrarte en lo importante: hacer crecer tu negocio.
-                </p>
             </div>
         </div>
     </section>
 
-    <!-- Company Section -->
-    <section id="company" class="section company-section">
-        <div class="section-header fade-in">
-            <span class="section-label">Quiénes Somos</span>
-            <h2 class="section-title">Operado por Visual & Growth</h2>
-            <p class="section-description">
-                visualandgrowth.es forma parte del ecosistema de Visual & Growth, consultora especializada en automatización empresarial e inteligencia artificial para empresas B2B.
-            </p>
-        </div>
-        <div class="company-content fade-in">
-            <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="company-cta">
-                Visitar Visual & Growth
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 10h10M10 5l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            </a>
-        </div>
+    <!-- CTA Section -->
+    <section class="section cta-section fade-in">
+        <h2 class="section-title">Operado por Visual & Growth</h2>
+        <p class="section-subtitle">
+            visualandgrowth.es forma parte del ecosistema de Visual & Growth, 
+            consultora especializada en soluciones empresariales para compañías B2B.
+        </p>
+        <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="cta-btn">
+            Visitar Visual & Growth
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <img src="logo.jpg" alt="Visual&Growth" class="footer-logo">
-            
-            <nav class="footer-links">
-                <a href="https://visualandgrowth.com" class="footer-link" target="_blank" rel="noopener">Visual & Growth</a>
-                <a href="https://visualandgrowth.com/#contacto" class="footer-link" target="_blank" rel="noopener">Contacto</a>
-            </nav>
-
-            <div class="footer-divider"></div>
-
-            <div class="footer-bottom">
-                <p><strong>visualandgrowth.es</strong></p>
-                <p>Infraestructura de comunicación profesional</p>
-                <p style="margin-top: 16px; opacity: 0.7;">© 2025 Visual & Growth. Todos los derechos reservados.</p>
-            </div>
+        <div class="footer-watermark">
+            <img src="vg_es.png" alt="" class="watermark-logo">
         </div>
+        <img src="vg_es.png" alt="VISUAL&GROWTH" class="footer-logo">
+        <nav class="footer-links">
+            <a href="https://visualandgrowth.com" target="_blank" rel="noopener" class="footer-link">Visual & Growth</a>
+            <a href="https://visualandgrowth.com/#contacto" target="_blank" rel="noopener" class="footer-link">Contacto</a>
+        </nav>
+        <div class="footer-divider"></div>
+        <p class="footer-copyright">
+            © 2025 Visual & Growth. Todos los derechos reservados.
+        </p>
     </footer>
 
-    <!-- Legal/Cookie Banner -->
-    <div class="legal-banner" id="legalBanner">
-        <div class="legal-banner-content">
-            <div class="legal-banner-text">
+    <!-- Cookie Banner -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div class="cookie-content">
+            <div class="cookie-text">
                 <h3>Privacidad y Cookies</h3>
                 <p>
-                    Utilizamos cookies para mejorar tu experiencia de navegación y analizar el uso del sitio. 
-                    Al continuar navegando, aceptas nuestra política de privacidad y el uso de cookies. 
-                    Esta web es operada por Visual & Growth.
+                    Utilizamos cookies para mejorar tu experiencia. Al continuar navegando, 
+                    aceptas nuestra política de privacidad y el uso de cookies.
                 </p>
             </div>
-            <div class="legal-banner-buttons">
-                <button class="legal-btn legal-btn-accept" onclick="acceptLegal()">Aceptar</button>
-                <button class="legal-btn legal-btn-decline" onclick="declineLegal()">Rechazar</button>
+            <div class="cookie-buttons">
+                <button class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">Aceptar</button>
+                <button class="cookie-btn cookie-btn-decline" onclick="declineCookies()">Rechazar</button>
             </div>
         </div>
     </div>
 
     <script>
-        // Legal/Cookie Banner Functions
-        function showLegalBanner() {
-            const consent = localStorage.getItem('legalConsent');
+        // Toggle email expansion
+        function toggleEmail(element) {
+            element.classList.toggle('expanded');
+        }
+
+        // Cookie Banner
+        function showCookieBanner() {
+            const consent = localStorage.getItem('cookieConsent');
             if (!consent) {
                 setTimeout(() => {
-                    document.getElementById('legalBanner').classList.add('show');
+                    document.getElementById('cookieBanner').classList.add('show');
                 }, 1000);
             }
         }
 
-        function acceptLegal() {
-            localStorage.setItem('legalConsent', 'accepted');
-            document.getElementById('legalBanner').classList.remove('show');
-            // Aquí puedes añadir código para activar cookies/analytics
-            console.log('Legal consent accepted');
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookieBanner').classList.remove('show');
         }
 
-        function declineLegal() {
-            localStorage.setItem('legalConsent', 'declined');
-            document.getElementById('legalBanner').classList.remove('show');
-            // Aquí puedes añadir código para desactivar cookies/analytics
-            console.log('Legal consent declined');
+        function declineCookies() {
+            localStorage.setItem('cookieConsent', 'declined');
+            document.getElementById('cookieBanner').classList.remove('show');
         }
 
-        // Initialize legal banner on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            showLegalBanner();
-        });
-
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    const headerHeight = document.querySelector('.header').offsetHeight;
-                    const targetPosition = target.offsetTop - headerHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-
-        // Intersection Observer for fade-in animations
+        // Intersection Observer for animations
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -895,33 +1002,19 @@
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
+                    entry.target.style.animationPlayState = 'running';
                 }
             });
         }, observerOptions);
 
-        // Initially set fade-in elements to invisible
         document.querySelectorAll('.fade-in').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            el.style.animationPlayState = 'paused';
             observer.observe(el);
         });
 
-        // Header scroll effect
-        let lastScroll = 0;
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('.header');
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 50) {
-                header.style.boxShadow = '0 2px 16px rgba(102, 126, 234, 0.08)';
-            } else {
-                header.style.boxShadow = 'none';
-            }
-
-            lastScroll = currentScroll;
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            showCookieBanner();
         });
     </script>
 </body>
