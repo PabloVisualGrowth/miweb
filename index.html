@@ -560,6 +560,26 @@
             padding: 120px 40px;
         }
 
+        /* Image Section */
+        .image-section {
+            background: var(--bg-light);
+            padding: 0;
+        }
+
+        .image-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 0;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
+        }
+
         .cta-title {
             font-size: clamp(40px, 5vw, 56px);
             font-weight: 800;
@@ -1051,6 +1071,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="section image-section fade-in">
+        <div class="image-container">
+            <img src="sentado.png" alt="Profesional trabajando" class="hero-image">
         </div>
     </section>
 
